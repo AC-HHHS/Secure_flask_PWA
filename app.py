@@ -32,6 +32,10 @@ def home():
 
     return render_template('home.html', fname=fname, lname=lname, email=email)
 
+@app.route('/signUp')
+def signUp():
+    return render_template('signUp.html')
+
 @app.route('/add_user', methods=['POST'])
 def add_user():
     fname = request.form.get('fname')
