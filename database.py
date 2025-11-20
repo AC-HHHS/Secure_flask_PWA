@@ -1,6 +1,6 @@
 import sqlite3
 
-connection = sqlite3.Connection('LoginData.db')
+connection = sqlite3.connect('LoginData.db')
 cursor = connection.cursor()
 
 cmd1 = """ CREATE TABLE IF NOT EXISTS USERS(first_name varchar (50),
