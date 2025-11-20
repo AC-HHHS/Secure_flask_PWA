@@ -46,13 +46,13 @@ def add_user():
     connection = sqlite3.connect('LoginData.db')
     cursor = connection.cursor()
 
-    ans = cursor.execute("slect * from USER where email=? AND password =?", (email,password)).fetchall()
+    ans = cursor.execute("select * from USER where email=? AND password =?", (email,password)).fetchall()
 
     if len(ans) > 0:
         connection.close()
         return render_template('login.html')
     else:
-        cursor.execute("INSERT INTO USER(fname,lname,eamil,password)value(?,?,?,?)", (fname,lname,email,password))
+        cursor.execute("INSERT INTO USERSs(fname,lname,email,password)value(?,?,?,?)", (fname,lname,email,password))
         connection.commit()
         connection.close()
         return render_template('login.html')
