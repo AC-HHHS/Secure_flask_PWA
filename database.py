@@ -3,13 +3,13 @@ import sqlite3
 connection = sqlite3.connect('LoginData.db')
 cursor = connection.cursor()
 
-cmd1 = """ CREATE TABLE IF NOT EXISTS USERS(first_name varchar (50),
-                                        last_name varchar(50),
+cmd1 = """ CREATE TABLE IF NOT EXISTS USERS(fname varchar (50),
+                                        lname varchar(50),
                                         email varchar(50) primary key,
                                         password varchar(50) not null) """
 cursor.execute(cmd1)
 
-cmd2 = """INSERT INTO USERS (first_name, last_name, email, password) values ('tester', 'test', 'tester@gmail.com','testerP')"""
+cmd2 = """INSERT INTO USERS (fname, lname, email, password) values ('tester', 'test', 'tester@gmail.com','testerP')"""
 cursor.execute(cmd2)
 connection.commit()
 

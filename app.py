@@ -52,7 +52,7 @@ def add_user():
         connection.close()
         return render_template('login.html')
     else:
-        cursor.execute("INSERT INTO USERSs(fname,lname,email,password)value(?,?,?,?)", (fname,lname,email,password))
+        cursor.execute("INSERT INTO USERS(fname,lname,email,password)value(?,?,?,?)", (fname,lname,email,password))
         connection.commit()
         connection.close()
         return render_template('login.html')
